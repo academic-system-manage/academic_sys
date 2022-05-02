@@ -58,27 +58,27 @@ public class UserController {
         return new R(1,"验证码已成功发送",null);
     }
 
-    /**
-     * 注册，即增加用户
-     * @param
-     * @return
-     */
-    @PostMapping(value = "/regist",produces = MediaType.APPLICATION_JSON_VALUE)
-    public R regist(@RequestBody JSONObject jsonObject, HttpSession httpSession) throws Exception {
-        //获取并封装数据
-        User user = new User();
-        user.setPassword(jsonObject.getString("password"));
-        user.setUsername(jsonObject.getString("username"));
-        user.setEmail(jsonObject.getString("email"));
-        user.setCode(jsonObject.getString("code"));
-        //注册
-        Boolean rf = userService.regist(user, httpSession);
-        if(rf) return new R(1,"注册成功",null);//返回注册成功
-        else {
-            regist_msg= (String) httpSession.getAttribute("regist_msg");
-            return new R(0,regist_msg,null);//注册失败
-        }
-    }
+//    /**
+//     * 注册，即增加用户
+//     * @param
+//     * @return
+//     */
+//    @PostMapping(value = "/regist",produces = MediaType.APPLICATION_JSON_VALUE)
+//    public R regist(@RequestBody JSONObject jsonObject, HttpSession httpSession) throws Exception {
+//        //获取并封装数据
+//        User user = new User();
+//        user.setPassword(jsonObject.getString("password"));
+//        user.setUsername(jsonObject.getString("username"));
+//        user.setEmail(jsonObject.getString("email"));
+//        user.setCode(jsonObject.getString("code"));
+//        //注册
+//        Boolean rf = userService.regist(user, httpSession);
+//        if(rf) return new R(1,"注册成功",null);//返回注册成功
+//        else {
+//            regist_msg= (String) httpSession.getAttribute("regist_msg");
+//            return new R(0,regist_msg,null);//注册失败
+//        }
+//    }
 
     /**
      * 修改密码

@@ -22,6 +22,16 @@ spring:
   mvc:
     format:
       date: yyyy/MM/dd
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  thymeleaf:
+    cache: false
+logging:level:
+  org:
+    springframework:
+      security=info
 mybatis-plus:
   global-config:
     db-config:

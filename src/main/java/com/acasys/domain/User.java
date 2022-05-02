@@ -6,15 +6,14 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName("Users")
+@TableName("userlogin")
 public class User {
-
-    private int id;
+    private Integer userID;
     private String password;
-    private String username;
-    private String email;
+    private String role;
+//    private String email;
 
     //验证码
-    @TableField(exist = false)
-    private String code;
+//    @TableField(exist = false)
+//    private String code;
 }

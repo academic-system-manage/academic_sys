@@ -11,15 +11,15 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface UserMapper extends BaseMapper<User> {
-    @Select("select * from users where email=#{email}")
-    public User selectByEmail(String email);
+//    @Select("select * from users where email=#{email}")
+//    public User selectByEmail(String email);
+//
+//    @Select("select * from users where username=#{username}")
+//    public User selectByUsername(String username);
 
-    @Select("select * from users where username=#{username}")
-    public User selectByUsername(String username);
-
-    @Insert("insert into users values(#{id},#{password},#{username},#{site},#{email})")
-    public int saveUser(User user);
-
-    @Update("update users set password=#{newPSW} where email=#{email}")
-    void updatePSW(String email, String newPSW);
+//    @Insert("insert into users values(#{id},#{password},#{username},#{site},#{email})")
+//    public int saveUser(User user);
+//
+//    @Update("update users set password=#{newPSW} where email=#{email}")
+//    void updatePSW(String id, String newPSW);
 }
