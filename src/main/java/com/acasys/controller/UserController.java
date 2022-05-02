@@ -1,6 +1,8 @@
 package com.acasys.controller;
 
 
+import com.acasys.domain.Student;
+import com.acasys.domain.Teacher;
 import com.acasys.domain.User;
 import com.acasys.service.MailService;
 import com.acasys.service.UserService;
@@ -46,6 +48,26 @@ public class UserController {
             return new R(1,"登录失败",user);
         }
     }
+
+    /**
+     * 获取当前用户详细信息
+     * @return
+     */
+    @GetMapping("/info")
+    public R getInfo(HttpSession session){
+        User user = (User) session.getAttribute("user");
+        if(user==null)return new R(0,"查询失败，请先登录",null);
+        if("老师".equals(user.getRole())){
+            Teacher teacher = (Teacher) session.getAttribute("teacher");
+            return new R(1,"查询成功",teacher);
+        }
+        if(user.getRole()=="学生"){
+            Student student = (Student) session.getAttribute("student");
+            return new R(1,"查询成功",student);
+        }
+        return new R(0,"查询失败",null);
+    }
+
 
     /**
      * 获取验证码接口

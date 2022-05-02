@@ -9,8 +9,8 @@ import lombok.Data;
 @Data
 @TableName("tb_student")
 public class Student {
-    private Integer studentID;
+    private Integer studentid;
     private String studentName;
     private String sex;
-    private Integer collegeID;
+    private Integer collegeid;
 }

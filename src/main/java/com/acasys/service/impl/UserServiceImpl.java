@@ -38,26 +38,26 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User login(User user, HttpSession session) {
-        Integer id = user.getUserID();
+        Integer id = user.getUserid();
         System.out.println(id);
         QueryWrapper<User> qw = new QueryWrapper<>();
-        qw.eq("id",id);
+        qw.eq("userid",id);
         User user1 = userMapper.selectOne(qw);
         if(user1==null)return null;
         else
             if (user.getPassword().equals(user1.getPassword())){
                 //判断role
-                if("students".equals(user1.getRole()))//如果为学生
+                if("学生".equals(user1.getRole()))//如果为学生
                 {
                     QueryWrapper<Student> sqw = new QueryWrapper<>();
-                    sqw.eq("studentID",id);
+                    sqw.eq("studentid",id);
                     Student student = studentMapper.selectOne(sqw);
                     session.setAttribute("student",student);
                 }
                 else //如果为老师
                 {
                     QueryWrapper<Teacher> tqw = new QueryWrapper<>();
-                    tqw.eq("teacherID",id);
+                    tqw.eq("teacherid",id);
                     Teacher teacher = teacherMapper.selectOne(tqw);
                     session.setAttribute("teacher",teacher);
                 }

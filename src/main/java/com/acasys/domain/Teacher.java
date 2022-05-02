@@ -9,8 +9,8 @@ import lombok.Data;
 @Data
 @TableName("teacher")
 public class Teacher {
-    private Integer teacherID;
-    private String teacherName;
+    private Integer teacherid;
+    private String teachername;
     private String sex;
-    private Integer collegeID;
+    private Integer collegeid;
 }
