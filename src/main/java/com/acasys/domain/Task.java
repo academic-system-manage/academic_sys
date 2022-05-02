@@ -1,4 +1,4 @@
-package com.edusystem.Domain;
+package com.acasys.domain;
 
 public class Task {
    public int idtask;

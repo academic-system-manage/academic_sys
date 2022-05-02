@@ -1,7 +1,7 @@
-package com.edusystem.Dao;
+package com.acasys.mapper;
 
+import com.acasys.domain.Task;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.edusystem.Domain.Task;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

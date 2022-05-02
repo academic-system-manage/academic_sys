@@ -1,8 +1,8 @@
-package com.edusystem.Controller;
+package com.acasys.controller;
 
-import com.edusystem.Controller.Utils.R;
-import com.edusystem.Domain.Task;
-import com.edusystem.Service.TeacherTaskWordService;
+import com.acasys.controller.Utils.R;
+import com.acasys.domain.Task;
+import com.acasys.service.TeacherTaskWordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

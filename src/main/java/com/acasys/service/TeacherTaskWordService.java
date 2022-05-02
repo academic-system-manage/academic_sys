@@ -1,6 +1,6 @@
-package com.edusystem.Service;
+package com.acasys.service;
+import com.acasys.domain.Task;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.edusystem.Domain.Task;
 
 public interface TeacherTaskWordService extends IService<Task> {
 }

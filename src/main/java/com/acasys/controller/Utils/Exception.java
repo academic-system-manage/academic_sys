@@ -1,4 +1,4 @@
-package com.edusystem.Controller.Utils;
+package com.acasys.controller.Utils;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

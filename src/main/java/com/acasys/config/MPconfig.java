@@ -1,4 +1,4 @@
-package com.edusystem.config;
+package com.acasys.config;
 
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
