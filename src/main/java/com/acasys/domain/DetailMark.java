@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName("/detailmark")
+@TableName("detailmark")
 public class DetailMark {
     private Integer studentid;
     private Integer courseid;
