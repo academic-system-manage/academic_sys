@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 
+/**
+ * author:lixuewei
+ */
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -87,18 +90,18 @@ public class UserController {
      * @return
      * @throws Exception
      */
-    @PostMapping(value = "/modifyPass",produces = MediaType.APPLICATION_JSON_VALUE)
-    public R modifyPass(@RequestBody JSONObject jsonObject, HttpSession session) {
-        String email = jsonObject.getString("email");
-        String newPSW = jsonObject.getString("newPSW");
-        String code = jsonObject.getString("code");
-        Boolean mf = userService.updatePassword(email, newPSW, code, session);
-        if(mf) return new R(1,"修改密码成功",null);
-        else {
-            modify_msg= (String) session.getAttribute("modify_msg");
-            return new R(0,modify_msg,null);
-        }
-    }
+//    @PostMapping(value = "/modifyPass",produces = MediaType.APPLICATION_JSON_VALUE)
+//    public R modifyPass(@RequestBody JSONObject jsonObject, HttpSession session) {
+//        String email = jsonObject.getString("email");
+//        String newPSW = jsonObject.getString("newPSW");
+//        String code = jsonObject.getString("code");
+//        Boolean mf = userService.updatePassword(email, newPSW, code, session);
+//        if(mf) return new R(1,"修改密码成功",null);
+//        else {
+//            modify_msg= (String) session.getAttribute("modify_msg");
+//            return new R(0,modify_msg,null);
+//        }
+//    }
 
 
 }

@@ -16,6 +16,9 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 
+/**
+ * author:lixuewei
+ */
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired

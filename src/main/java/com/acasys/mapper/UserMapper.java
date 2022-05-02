@@ -8,6 +8,9 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
+/**
+ * author:lixuewei
+ */
 @Mapper
 @Repository
 public interface UserMapper extends BaseMapper<User> {

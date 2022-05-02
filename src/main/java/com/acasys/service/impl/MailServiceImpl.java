@@ -12,6 +12,9 @@ import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.Random;
 
+/**
+ * author:lixuewei
+ */
 @Service
 public class MailServiceImpl implements MailService {
     @Autowired
