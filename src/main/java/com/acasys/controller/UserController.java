@@ -14,6 +14,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,6 +27,7 @@ public class UserController {
     private UserService userService;
     @Autowired
     private MailService mailService;
+
 
     private String regist_msg;
     private String modify_msg;
@@ -68,6 +70,14 @@ public class UserController {
         return new R(0,"查询失败",null);
     }
 
+    /**
+     * 老师查看选某一门课的所有学生
+     */
+    @GetMapping("/students/{courseid}")
+    public R getStudents_Course(@PathVariable Integer courseid){
+        List<Student> studentList= userService.getStudentsOfCourse(courseid);
+        return new R(1,"查询成功",studentList);
+    }
 
     /**
      * 获取验证码接口

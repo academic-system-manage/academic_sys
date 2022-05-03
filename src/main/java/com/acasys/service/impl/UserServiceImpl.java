@@ -3,6 +3,7 @@ package com.acasys.service.impl;
 import com.acasys.domain.Student;
 import com.acasys.domain.Teacher;
 import com.acasys.domain.User;
+import com.acasys.mapper.CourseSelectMapper;
 import com.acasys.mapper.StudentMapper;
 import com.acasys.mapper.TeacherMapper;
 import com.acasys.mapper.UserMapper;
@@ -14,7 +15,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * author:lixuewei
@@ -27,6 +30,8 @@ public class UserServiceImpl implements UserService {
     private StudentMapper studentMapper;
     @Autowired
     private TeacherMapper teacherMapper;
+    @Autowired
+    private CourseSelectMapper courseSelectMapper;
 
     private Date date;
 
@@ -66,6 +71,18 @@ public class UserServiceImpl implements UserService {
                 return user1;//密码正确，返回User对象
             }
             else return null;//密码错误，登录失败
+    }
+
+    @Override
+    public List<Student> getStudentsOfCourse(Integer courseid) {
+        List<Integer> list= courseSelectMapper.selectStudents(courseid);
+        List<Student> studentList= new ArrayList<>();
+        for (Integer id : list) {
+            QueryWrapper<Student> qw = new QueryWrapper<>();
+            qw.eq("studentid",id);
+            studentList.add(studentMapper.selectOne(qw));
+        }
+        return studentList;
     }
 
     /**

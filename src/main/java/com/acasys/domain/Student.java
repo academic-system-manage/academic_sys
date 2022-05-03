@@ -7,10 +7,10 @@ import lombok.Data;
  * author:lixuewei
  */
 @Data
-@TableName("tb_student")
+@TableName("student")
 public class Student {
     private Integer studentid;
-    private String studentName;
+    private String studentname;
     private String sex;
     private Integer collegeid;
 }
